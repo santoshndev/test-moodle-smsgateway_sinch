@@ -1,0 +1,9 @@
+include:
+  - project: 'sebsoft/open-source/gitlab'
+    file: '/opensource-plugin/opensource-plugin.yml'
+    ref: main
+
+variables:
+  PLUGIN: 'smsgateway_sinch'
+  REPOURL: ''
+  PATHNAME: 'sms/gateway/sinch'
