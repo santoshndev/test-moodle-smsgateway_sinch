@@ -17,7 +17,8 @@
 namespace smsgateway_sinch;
 
 use core_sms\hook\after_sms_gateway_form_hook;
-use MoodleQuickForm;
+use moodleform;
+use smsgateway_sinch\hook_listener;
 
 /**
  * Hook listener test for Sinch SMS gateway.
@@ -38,7 +39,7 @@ final class hook_listener_test extends \advanced_testcase {
         $this->resetAfterTest();
 
         // Create a mock form.
-        $mform = $this->getMockBuilder(MoodleQuickForm::class)
+        $mform = $this->getMockBuilder(moodleform::class)
             ->disableOriginalConstructor()
             ->getMock();
 

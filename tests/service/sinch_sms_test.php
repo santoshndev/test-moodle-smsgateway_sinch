@@ -18,6 +18,7 @@ namespace smsgateway_sinch\service;
 
 use core_sms\message_status;
 use PHPUnit\Framework\MockObject\MockObject;
+use smsgateway_sinch\local\service\sinch_sms;
 
 /**
  * Test class for Sinch SMS service.
