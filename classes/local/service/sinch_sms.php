@@ -14,6 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Sinch SMS service provider implementation.
+ *
+ * @package    smsgateway_sinch
+ * @copyright  2025 RvD <helpdesk@sebsoft.nl>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 namespace smsgateway_sinch\local\service;
 
 use core_sms\message_status;
@@ -29,45 +37,36 @@ use stdClass;
  */
 class sinch_sms implements sinch_sms_service_provider {
 
-    /**
-     * Sends an SMS message using the Sinch API.
-     *
-     * @param string $messagecontent The content to send in the SMS message
-     * @param string $phonenumber The destination for the message
-     * @param stdClass $config The gateway configuration
-     * @return message_status Status of the message
-     */
+    #[\Override]
     public static function send_sms_message(
         string $messagecontent,
         string $phonenumber,
         stdclass $config,
     ): message_status {
-        global $SITE;
-
         try {
-            $service_plan_id = $config->service_plan_id;
-            $bearer_token = $config->bearer_token;
-            $send_from = $config->send_from;
-            
-            // Get the correct API URL based on the selected region
+            $serviceplanid = $config->service_plan_id;
+            $bearertoken = $config->bearer_token;
+            $sendfrom = $config->send_from;
+
+            // Get the correct API URL based on the selected region.
             $region = $config->api_url;
-            $api_url = "https://{$region}.sms.api.sinch.com/xms/v1/{$service_plan_id}/batches";
+            $apiurl = "https://{$region}.sms.api.sinch.com/xms/v1/{$serviceplanid}/batches";
             $curl = curl_init();
             curl_setopt_array($curl, [
-                CURLOPT_URL => $api_url,
+                CURLOPT_URL => $apiurl,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => json_encode([
-                    "from" => $send_from,
+                    "from" => $sendfrom,
                     "to" => [$phonenumber],
-                    "body" => $messagecontent
+                    "body" => $messagecontent,
                 ]),
                 CURLOPT_HTTPHEADER => [
-                    "Authorization: Bearer " . $bearer_token,
-                    "Content-Type: application/json"
+                    "Authorization: Bearer " . $bearertoken,
+                    "Content-Type: application/json",
                 ],
             ]);
 
@@ -92,4 +91,5 @@ class sinch_sms implements sinch_sms_service_provider {
             return message_status::GATEWAY_NOT_AVAILABLE;
         }
     }
+
 }

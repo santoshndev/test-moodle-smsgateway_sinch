@@ -14,6 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Hook listener for Sinch SMS gateway.
+ *
+ * @package    smsgateway_sinch
+ * @copyright  2024 RvD <helpdesk@sebsoft.nl>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 namespace smsgateway_sinch;
 
 use core_sms\hook\after_sms_gateway_form_hook;
@@ -41,7 +49,7 @@ class hook_listener {
 
         $mform->addElement('static', 'information', '', get_string('sinch_information', 'smsgateway_sinch'));
 
-        // Service Plan ID
+        // Service Plan ID.
         $mform->addElement(
             'text',
             'service_plan_id',
@@ -53,7 +61,7 @@ class hook_listener {
         $mform->addRule('service_plan_id', get_string('maximumchars', '', 255), 'maxlength', 255);
         $mform->setDefault('service_plan_id', '');
 
-        // Bearer Token
+        // Bearer Token.
         $mform->addElement(
             'passwordunmask',
             'bearer_token',
@@ -65,7 +73,7 @@ class hook_listener {
         $mform->addRule('bearer_token', get_string('maximumchars', '', 255), 'maxlength', 255);
         $mform->setDefault('bearer_token', '');
 
-        // Send From Number
+        // Send From Number.
         $mform->addElement(
             'text',
             'send_from',
@@ -77,7 +85,7 @@ class hook_listener {
         $mform->addRule('send_from', get_string('maximumchars', '', 255), 'maxlength', 255);
         $mform->setDefault('send_from', '');
 
-        // API URL Selection
+        // API URL Selection.
         $apiurls = [
             'us' => get_string('region_us', 'smsgateway_sinch'),
             'eu' => get_string('region_eu', 'smsgateway_sinch'),
@@ -97,7 +105,7 @@ class hook_listener {
         $mform->setDefault('api_url', 'us');
         $mform->addHelpButton('api_url', 'api_url', 'smsgateway_sinch');
 
-        // Country Code
+        // Country Code.
         $mform->addElement(
             'text',
             'countrycode',
@@ -108,4 +116,4 @@ class hook_listener {
         $mform->addRule('countrycode', get_string('maximumchars', '', 4), 'maxlength', 4);
         $mform->setDefault('countrycode', '');
     }
-} 
+}

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -28,18 +27,13 @@ $string['api_url_help'] = 'Select the Sinch API region that matches your account
 $string['bearer_token'] = 'API Token';
 $string['countrycode'] = 'Country Code';
 $string['gateway'] = 'Sinch service';
-$string['send_from'] = 'Send From Number';
-$string['service_plan_id'] = 'Service Plan ID';
-$string['sinch_information'] = 'Complete the following fields using the information provided by Sinch';
 $string['pluginname'] = 'Sinch';
 $string['privacy:metadata'] = 'The Sinch SMS gateway plugin does not store any personal data.';
-
-// Region names
-$string['region_us'] = 'United States (US)';
-$string['region_eu'] = 'European Union (EU)';
 $string['region_au'] = 'Australia (AU)';
 $string['region_br'] = 'Brazil (BR)';
 $string['region_ca'] = 'Canada (CA)';
-
-
-
+$string['region_eu'] = 'European Union (EU)';
+$string['region_us'] = 'United States (US)';
+$string['send_from'] = 'Send From Number';
+$string['service_plan_id'] = 'Service Plan ID';
+$string['sinch_information'] = 'Complete the following fields using the information provided by Sinch';

@@ -27,7 +27,7 @@ use MoodleQuickForm;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers     \smsgateway_sinch\hook_listener
  */
-class hook_listener_test extends \advanced_testcase {
+final class hook_listener_test extends \advanced_testcase {
 
     /**
      * Test that the form is properly configured for Sinch gateway.
@@ -46,12 +46,18 @@ class hook_listener_test extends \advanced_testcase {
         $mform->expects($this->exactly(6))
             ->method('addElement')
             ->withConsecutive(
-                [$this->equalTo('static'), $this->equalTo('information'), $this->equalTo(''), $this->anything()],
-                [$this->equalTo('text'), $this->equalTo('service_plan_id'), $this->anything(), $this->anything()],
-                [$this->equalTo('passwordunmask'), $this->equalTo('bearer_token'), $this->anything(), $this->anything()],
-                [$this->equalTo('text'), $this->equalTo('send_from'), $this->anything(), $this->anything()],
-                [$this->equalTo('select'), $this->equalTo('api_url'), $this->anything(), $this->anything()],
-                [$this->equalTo('text'), $this->equalTo('countrycode'), $this->anything(), $this->anything()]
+                [$this->equalTo('static'), $this->equalTo('information'),
+                    $this->equalTo(''), $this->anything()],
+                [$this->equalTo('text'), $this->equalTo('service_plan_id'),
+                    $this->anything(), $this->anything()],
+                [$this->equalTo('passwordunmask'), $this->equalTo('bearer_token'),
+                    $this->anything(), $this->anything()],
+                [$this->equalTo('text'), $this->equalTo('send_from'),
+                    $this->anything(), $this->anything()],
+                [$this->equalTo('select'), $this->equalTo('api_url'),
+                    $this->anything(), $this->anything()],
+                [$this->equalTo('text'), $this->equalTo('countrycode'),
+                    $this->anything(), $this->anything()]
             );
 
         // Set up expectations for setType calls.
@@ -69,10 +75,14 @@ class hook_listener_test extends \advanced_testcase {
         $mform->expects($this->exactly(4))
             ->method('addRule')
             ->withConsecutive(
-                [$this->equalTo('service_plan_id'), $this->isNull(), $this->equalTo('required'), $this->isNull(), $this->equalTo('client')],
-                [$this->equalTo('bearer_token'), $this->isNull(), $this->equalTo('required'), $this->isNull(), $this->equalTo('client')],
-                [$this->equalTo('send_from'), $this->isNull(), $this->equalTo('required'), $this->isNull(), $this->equalTo('client')],
-                [$this->equalTo('api_url'), $this->isNull(), $this->equalTo('required'), $this->isNull(), $this->equalTo('client')]
+                [$this->equalTo('service_plan_id'), $this->isNull(), $this->equalTo('required'),
+                    $this->isNull(), $this->equalTo('client')],
+                [$this->equalTo('bearer_token'), $this->isNull(), $this->equalTo('required'),
+                    $this->isNull(), $this->equalTo('client')],
+                [$this->equalTo('send_from'), $this->isNull(), $this->equalTo('required'),
+                    $this->isNull(), $this->equalTo('client')],
+                [$this->equalTo('api_url'), $this->isNull(), $this->equalTo('required'),
+                    $this->isNull(), $this->equalTo('client')]
             );
 
         // Set up expectations for setDefault calls.
@@ -126,4 +136,4 @@ class hook_listener_test extends \advanced_testcase {
         // Call the hook listener.
         hook_listener::set_form_definition_for_sinch_sms_gateway($hook);
     }
-} 
+}

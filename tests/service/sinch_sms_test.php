@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace smsgateway_sinch\local\service;
+namespace smsgateway_sinch\service;
 
 use core_sms\message_status;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -27,7 +27,7 @@ use PHPUnit\Framework\MockObject\MockObject;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers     \smsgateway_sinch\local\service\sinch_sms
  */
-class sinch_sms_test extends \advanced_testcase {
+final class sinch_sms_test extends \advanced_testcase {
 
     /**
      * Test successful SMS sending.
@@ -181,4 +181,4 @@ class sinch_sms_test extends \advanced_testcase {
             }
         }
     }
-} 
+}

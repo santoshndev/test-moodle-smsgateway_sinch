@@ -66,4 +66,4 @@ class gateway extends \core_sms\gateway {
     public function get_send_priority(message $message): int {
         return 50;
     }
-} 
+}

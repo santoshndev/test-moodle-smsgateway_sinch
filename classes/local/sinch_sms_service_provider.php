@@ -14,7 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
+/**
+ * Sinch SMS service provider interface to provide a standard interface for different Sinch service providers
+ * like sns, sqs etc.
+ *
+ * @package    smsgateway_sinch
+ * @copyright  2024 RvD <helpdesk@sebsoft.nl>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 namespace smsgateway_sinch\local;
 
@@ -36,11 +43,12 @@ interface sinch_sms_service_provider {
      *
      * @param string $messagecontent the content to send in the SMS message.
      * @param string $phonenumber the destination for the message.
+     * @param stdClass $config the gateway instance config.
      * @return message_status Status of the message.
      */
     public static function send_sms_message(
         string $messagecontent,
         string $phonenumber,
-        stdclass $config,
+        stdClass $config,
     ): message_status;
 }

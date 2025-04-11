@@ -15,17 +15,30 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information for smsgateway_sinch.
+ * Privacy Subsystem for smsgateway_sinch implementing null_provider.
  *
  * @package    smsgateway_sinch
  * @copyright  2024 RvD <helpdesk@sebsoft.nl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @codeCoverageIgnore
  */
 
-defined('MOODLE_INTERNAL') || die();
+namespace smsgateway_sinch\privacy;
 
-$plugin->version = 2025040700;
-$plugin->requires = 2024100100;
-$plugin->component = 'smsgateway_sinch';
-$plugin->supported = [405, 500]; // Supports Moodle 4.5 and 5.0.
-$plugin->maturity = MATURITY_STABLE;
+use core_privacy\local\metadata\null_provider;
+
+/**
+ * Privacy Subsystem for smsgateway_sinch implementing null_provider.
+ *
+ * @package    smsgateway_sinch
+ * @copyright  2024 RvD <helpdesk@sebsoft.nl>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @codeCoverageIgnore
+ */
+class provider implements null_provider {
+
+    #[\Override]
+    public static function get_reason(): string {
+        return 'privacy:metadata';
+    }
+}

@@ -27,15 +27,13 @@ $string['api_url_help'] = 'Selecteer de Sinch API regio die overeenkomt met uw a
 $string['bearer_token'] = 'API Token';
 $string['countrycode'] = 'Landcode';
 $string['gateway'] = 'Sinch service';
-$string['send_from'] = 'Verzender Nummer';
-$string['service_plan_id'] = 'Service Plan ID';
-$string['sinch_information'] = 'Vul de volgende velden in met de informatie die door Sinch is verstrekt';
 $string['pluginname'] = 'Sinch';
 $string['privacy:metadata'] = 'De Sinch SMS gateway plugin slaat geen persoonlijke gegevens op.';
-
-// Region names
-$string['region_us'] = 'Verenigde Staten (US)';
-$string['region_eu'] = 'Europese Unie (EU)';
 $string['region_au'] = 'Australië (AU)';
 $string['region_br'] = 'Brazilië (BR)';
 $string['region_ca'] = 'Canada (CA)';
+$string['region_eu'] = 'Europese Unie (EU)';
+$string['region_us'] = 'Verenigde Staten (US)';
+$string['send_from'] = 'Verzender Nummer';
+$string['service_plan_id'] = 'Service Plan ID';
+$string['sinch_information'] = 'Vul de volgende velden in met de informatie die door Sinch is verstrekt';
