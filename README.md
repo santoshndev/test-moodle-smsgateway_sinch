@@ -16,9 +16,9 @@ This plugin integrates Sinch's SMS gateway service with Moodle, allowing adminis
 - High delivery rates through Sinch's global network
 
 ## Requirements
-- Moodle 4.1 or later
+- Moodle 4.5 or later
 - A Sinch account and API credentials
-- Valid phone number for sending SMS
+- Valid phone number for sending SMS (in Sinch platform)
 
 ## Installation and Configuration
 
