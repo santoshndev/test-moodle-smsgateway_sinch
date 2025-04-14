@@ -1,6 +1,6 @@
 include:
   - project: 'sebsoft/open-source/gitlab'
-    file: '/opensource-plugin/opensource-plugin.yml'
+    file: '/opensource-plugin/opensource-plugin-405+.yml'
     ref: main
 
 variables:
