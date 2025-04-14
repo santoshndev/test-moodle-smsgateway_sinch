@@ -29,3 +29,4 @@ $plugin->requires = 2024100100;
 $plugin->component = 'smsgateway_sinch';
 $plugin->supported = [405, 500]; // Supports Moodle 4.5 and 5.0.
 $plugin->maturity = MATURITY_STABLE;
+$plugin->release = '1.0.0';

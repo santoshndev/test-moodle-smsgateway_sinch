@@ -12,10 +12,8 @@ This plugin integrates Sinch's SMS gateway service with Moodle, allowing adminis
 - Configurable sender name/number
 - Support for international phone numbers
 - Easy setup and configuration
-- Compatible with Moodle's messaging system
 - Supports Multi-Factor Authentication (MFA)
 - High delivery rates through Sinch's global network
-- Real-time delivery status updates
 
 ## Requirements
 - Moodle 4.1 or later
