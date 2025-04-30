@@ -36,4 +36,5 @@ $string['region_eu'] = 'European Union (EU)';
 $string['region_us'] = 'United States (US)';
 $string['send_from'] = 'Send From Number';
 $string['service_plan_id'] = 'Service Plan ID';
+$string['sinch_err'] = 'Sinch SMS Error: {$a}';
 $string['sinch_information'] = 'Complete the following fields using the information provided by Sinch';

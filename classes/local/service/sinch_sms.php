@@ -76,14 +76,14 @@ class sinch_sms implements sinch_sms_service_provider {
             curl_close($curl);
 
             if ($err) {
-                debugging("Sinch SMS Error: " . $err);
+                debugging(get_string('sinch_err', 'smsgateway_sinch', $err));
                 return message_status::GATEWAY_NOT_AVAILABLE;
             }
 
             if ($httpcode >= 200 && $httpcode < 300) {
                 return message_status::GATEWAY_SENT;
             } else {
-                debugging("Sinch SMS Error: HTTP " . $httpcode . " - " . $response);
+                debugging(get_string('sinch_err', 'smsgateway_sinch', "HTTP {$httpcode} - {$response}"));
                 return message_status::GATEWAY_NOT_AVAILABLE;
             }
         } catch (\Exception $e) {
