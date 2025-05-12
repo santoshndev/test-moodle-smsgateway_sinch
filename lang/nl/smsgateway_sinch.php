@@ -36,4 +36,5 @@ $string['region_eu'] = 'Europese Unie (EU)';
 $string['region_us'] = 'Verenigde Staten (US)';
 $string['send_from'] = 'Verzender Nummer';
 $string['service_plan_id'] = 'Service Plan ID';
+$string['sinch_err'] = 'Sinch SMS fout: {$a}';
 $string['sinch_information'] = 'Vul de volgende velden in met de informatie die door Sinch is verstrekt';
